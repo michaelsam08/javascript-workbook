@@ -6,4 +6,4 @@ const = 'printListOfOlympians' = (array1) => {
     console.log(item);
   })
 
-  printListOfOlympians(['june', 'july', 'august', 'september', 'october']);
+  printListOfOlympians(['michael', 'james', 'julia', 'john', 'patty']);
