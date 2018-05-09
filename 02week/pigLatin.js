@@ -8,16 +8,30 @@ const rl = readline.createInterface({
 });
 
 
-function pigLatin(word) {
-
-  // Your code here
-
+function translatePigLatin(str) {
+  const vowels = ['a', 'e', 'i', 'o', 'u'],
+    const result = str.split('');
+  if (vowels.includes(str.charAt(0))) {
+    return str += 'way';
+  } else {
+    for (const i = 0; i < str.length; i++) {
+      //! turns true into false and vice versa
+      if (!vowels.includes(str[i])) {
+        //shift removes the first item of the array and returns it
+        result.push(result.shift());
+      } else {
+        result.push('ay');
+        return result.join('');
+      }
+    }
+  }
 }
+console.log(translatePigLatin('consonant'));
 
 
 function getPrompt() {
   rl.question('word ', (answer) => {
-    console.log( pigLatin(answer) );
+    console.log(pigLatin(answer));
     getPrompt();
   });
 }
