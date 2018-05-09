@@ -19,24 +19,44 @@ function printStacks() {
   console.log("c: " + stacks.c);
 }
 
-function movePiece() {
-  // Your code here
 
+// to move a piece from one stack to another uses the pop/push and shift/unshift methods
+// there are four pieces that need to move from one stack to another
+function movePiece(origin, auxDisc, destination) {
+  origin.pop();
+  destination.push(auxDisc);
 }
 
-function isLegal() {
-  // Your code here
-
+function isLegal(originDisc, destination) {
+  // the pieces can only be moved if they are to land on a larger piece
+  // use if/else statement to determin if piece being moved is smaller/thinner than the last piece of the receiving stack
+  // evaluate the propert
 }
+const destinationDisc = destination[destination.length - 1];
+if (destination.length === 0) {
+  return true;
+} else if (originDisc < destinationDisc) {
+  return true;
+} else {
+  return false;
+}
+
+
 
 function checkForWin() {
-  // Your code here
-
+  (forEach) to check
+  for the items in teh array.
+  if(stacks.c.length === 4) {
+    return console.log("You win");
+  }
 }
+// use if/else statement to determine if all pieces are in one stack top down from smallest to largest
+// use if else statement to
+
 
 function towersOfHanoi(startStack, endStack) {
-  // Your code here
-
+  const origin = stacks[startStack];
+  const destination = stacks[endStack];
 }
 
 function getPrompt() {
@@ -56,7 +76,11 @@ if (typeof describe === 'function') {
   describe('#towersOfHanoi()', () => {
     it('should be able to move a block', () => {
       towersOfHanoi('a', 'b');
-      assert.deepEqual(stacks, { a: [4, 3, 2], b: [1], c: [] });
+      assert.deepEqual(stacks, {
+        a: [4, 3, 2],
+        b: [1],
+        c: []
+      });
     });
   });
 
@@ -80,9 +104,17 @@ if (typeof describe === 'function') {
   });
   describe('#checkForWin()', () => {
     it('should detect a win', () => {
-      stacks = { a: [], b: [4, 3, 2, 1], c: [] };
+      stacks = {
+        a: [],
+        b: [4, 3, 2, 1],
+        c: []
+      };
       assert.equal(checkForWin(), true);
-      stacks = { a: [1], b: [4, 3, 2], c: [] };
+      stacks = {
+        a: [1],
+        b: [4, 3, 2],
+        c: []
+      };
       assert.equal(checkForWin(), false);
     });
   });
