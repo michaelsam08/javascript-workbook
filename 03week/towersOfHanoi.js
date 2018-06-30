@@ -18,8 +18,6 @@ function printStacks() {
   console.log("b: " + stacks.b);
   console.log("c: " + stacks.c);
 }
-
-
 // to move a piece from one stack to another uses the pop/push and shift/unshift methods
 // there are four pieces that need to move from one stack to another
 function movePiece(origin, auxDisc, destination) {
