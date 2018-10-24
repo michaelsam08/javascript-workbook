@@ -9,6 +9,44 @@ const rl = readline.createInterface({
 
 
 function rockPaperScissors(hand1, hand2) {
+  // there are two players, I'll call them hand1 and hand2
+
+
+  // if hand1 is rock and hand2 is paper then hand2 wins
+  if (hand1.toLowerCase().replace(/ /g, '') === 'rock' && hand2.toLowerCase().replace(/ /g, '') = 'paper') {
+    return "Hand two wins!"
+  } else
+
+
+    // if hand1 is rock and hand2 is scissors then hand1 wins
+    if (hand1.toLowerCase().replace(/ /g, '') === 'rock' && hand2.toLowerCase().replace(/ /g, '') = 'scissors') {
+      return "Hand one wins!"
+    } else
+
+      // if hand1 is scissors and hand2 is rock then hand2 wins
+      if (hand1.toLowerCase().replace(/ /g, '') === 'scissors' && hand2.toLowerCase = 'rock') {
+        return "Hand two wins!"
+      } else
+
+        // if hand1 is scissors and hand2 is paper then hand1 wins
+        if (hand1.toLowerCase().replace(/ /g, '') === 'scissors' && hand2.toLowerCase = 'paper') {
+          return "Hand one wins!"
+        } else
+
+          // if hand1 is paper and hand2 is rock then hand1 wins
+          if (hand1.toLowerCase().replace(/ /g, '') === 'paper' && hand2.toLowercase = 'rock') {
+            return "Hand one wins!"
+          } else
+
+            // if hand1 is paper and hand2 is scissors then hand2 wins
+            if (hand1.toLowerCase().replace(/ /g, '') === 'paper' && hand2.toLowerCase = 'scissors') {
+              return "Hand two wins!"
+            } else
+
+              // if hand1 and hand2 are the same it is a tie
+              if (hand1.toLowerCase().replace(/ /g, '') === hand2.toLowerCase().replace(/ /g, '')) {
+                return "It's a tie!"
+              } else
 
   // Write code here
 
@@ -17,7 +55,7 @@ function rockPaperScissors(hand1, hand2) {
 function getPrompt() {
   rl.question('hand1: ', (answer1) => {
     rl.question('hand2: ', (answer2) => {
-      console.log( rockPaperScissors(answer1, answer2) );
+      console.log(rockPaperScissors(answer1, answer2));
       getPrompt();
     });
   });
